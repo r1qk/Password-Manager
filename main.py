@@ -1,5 +1,6 @@
 #FRONTEND
 import pwinput
+import init_db
 import crud
 
 
@@ -29,16 +30,16 @@ def menu2():
         
 
 def main():
-    crud.create_schema()
-    crud.create_table_usuary()
-    crud.create_table_password()
+    init_db.create_schema()
+    init_db.create_table_usuary()
+    init_db.create_table_password()
     while True:
         opcao = menu1()
         match opcao:
             case 1: #Logar
                     nome_login = input("Nome de usuário: ")
                     senha_m = pwinput.pwinput(prompt="Digite sua senha: ")
-                    validacao = crud.login(nome_login, senha_m)
+                    validacao = init_db.login(nome_login, senha_m)
                     if not validacao:
                         print("Nome de usuário ou senha inválido!\n")
                     else:
@@ -46,22 +47,21 @@ def main():
                         while True:
                             opcao2 = menu2() #CRUD
                             if opcao2 == 1:
-                                crud.create(nome_login)
+                                init_db.create(nome_login)
                             if opcao2 == 2:
-                                crud.read(nome_login)
+                                init_db.read(nome_login)
                             if opcao2 == 3:
-                                crud.update(nome_login)
+                                init_db.update(nome_login)
                             if opcao2 == 4:
-                                crud.delete(nome_login)
+                                init_db.delete(nome_login)
                             if opcao2 == 5:
                                 print("Voltando para o menu.\n")
                                 break
 
-
             case 2: #Criar nova conta
                 nome = input("Nome de usuário: ")
                 senha_m = pwinput.pwinput(prompt="Digite sua senha: ")
-                crud.create_account(nome, senha_m)
+                init_db.create_account(nome, senha_m)
   
             case 3: #Sair
                 print("Fim do programa! Reinicie o código para recomeçar!\n")
