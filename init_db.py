@@ -27,7 +27,8 @@ def create_table_usuary():
 
         if conexao.is_connected():
             cursor = conexao.cursor()
-            cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.usuarios (id_usuario INTEGER PRIMARY KEY auto_increment, nome VARCHAR(250), senha_mestra VARCHAR(250));')
+            # cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.usuarios (id_usuario INTEGER PRIMARY KEY auto_increment, nome VARCHAR(250), senha_mestra VARCHAR(250));')
+            cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.usuarios (id_usuario INTEGER PRIMARY KEY auto_increment, nome VARCHAR(250), senha_mestra VARCHAR(80) NOT NULL, salt VARCHAR(80) NOT NULL);')
             conexao.commit()
     
     except Error:
@@ -46,7 +47,8 @@ def create_table_password():
 
         if conexao.is_connected():
             cursor = conexao.cursor()
-            cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.senhas (id_usuario INT, plataforma VARCHAR(250), senha VARCHAR(250));')
+            # cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.senhas (id_usuario INT, plataforma VARCHAR(250), senha VARCHAR(250));')
+            cursor.execute('CREATE TABLE IF NOT EXISTS password_manager.senhas (id_usuario INT, plataforma VARCHAR(250), senha VARCHAR(256), salt VARCHAR(80), nonce VARCHAR(80), tag VARCHAR(80));')
             conexao.commit()
 
     

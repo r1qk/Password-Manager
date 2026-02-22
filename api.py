@@ -33,14 +33,10 @@ def login_api():
     senha = dados.get("senha") 
 
     resultado = crud.login(nome, senha)
-    # if resultado.get("sucesso"):
-    #     return jsonify(resultado), 200 #ok
-    # else: 
-    #     return jsonify(resultado), 404 #não encontrado
     
     if resultado.get("sucesso"):
         access_token = create_access_token(identity=nome) #token pra nome do usuário
-        return jsonify({"Token de acesso": access_token}), 200 #ok
+        return jsonify({"status": "Logado com sucesso!" ,"Token de acesso": access_token}), 200 #ok
     else: 
         return jsonify({"Erro": "Nome ou senha inválidos"}), 401 #credenciais inválidas
     
