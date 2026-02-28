@@ -1,5 +1,5 @@
 #backend
-from db import get_connect
+from db.db import get_connect
 from mysql.connector import Error
 
 #CREATE | Criar Database
