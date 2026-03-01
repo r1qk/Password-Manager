@@ -140,4 +140,10 @@ arquivos importantes para o projeto:
 - **hashlib:** biblioteca utilizada para o SHA3-512, hash que gera a senha mestra;
 - **os:** biblioteca nativa do python usada para ler variáveis de ambientes, verificar arquivos, gerenciar diretórios;
 - **dotenv**: usado para carregar automaticamente um arquivo .env;
-- **mysql.connector:** biblioteca que permite a conexão entre python e MySQL. 
+- **mysql.connector:** biblioteca que permite a conexão entre python e MySQL.
+
+## 5) Vídeo do projeto na prática
+A seguir, foi gravado um vídeo vendo como o projeto se comporta na prática.   
+[Clique aqui para ser direcionado ao vídeo no Youtube](https://www.youtube.com/watch?v=To04cfYq60U)  
+
+[<img width="480" height="267" alt="capa" src="https://github.com/user-attachments/assets/44578ba4-8f8e-4d84-b02a-df460ee4eb3c" />](https://www.youtube.com/watch?v=To04cfYq60U)
