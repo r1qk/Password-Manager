@@ -1,6 +1,5 @@
-# Atenção: Projeto educacional em desenvolvimento
-O objetivo desse projeto é estudar criptografia, backend, APIs, gerenciamento seguro de senhas e MySQL. O projeto ainda está
-em desenvolvimento e será atualizado com o decorrer do tempo.
+# Atenção: Projeto educacional
+O objetivo desse projeto é estudar criptografia, backend, APIs, gerenciamento seguro de senhas e MySQL.
 
 # Projeto - Password Manager
 Este repositório contém o projeto Password Manager, um programa que permite
